@@ -2,12 +2,12 @@ class House:
     def __init__(self):
         self.number_of_floors = 0
 
-    def set_new_number_of_floors(self):
-        """ Установить количество этажей """
-        number_of_floors = self
-        print('Этажность установлена. В строении ', number_of_floors, 'этажей!')
+    def __set__(self, floors):
+        """ Установить новое количество этажей """
+        self.number_of_floors = floors
 
-build_1 = House
-print('Объект "Строение" создан. Количество этажей не определено.')
-build_1.set_new_number_of_floors(input('Ввдите требуемое количество этажей: '))
+build_1 = House()
+print('Объект "Строение" создан. Количество этажей: ', build_1.number_of_floors)
+build_1.__set__(input('Задайте требуемое количество этажей: '))
+print('Этажность установлена. В строении ', build_1.number_of_floors, 'этажей!')
 
