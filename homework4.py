@@ -10,6 +10,5 @@ class Buiding:
 
 for i in range(0, 40):
     new_object = Buiding()
-    # print('новый объект № ', Buiding.total)
     print(new_object)
     i += 1
